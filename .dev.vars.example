@@ -1,0 +1,2 @@
+ADMIN_PASSWORD="123"
+SESSION_SECRET="replace-with-a-random-secret-at-least-32-characters-long"

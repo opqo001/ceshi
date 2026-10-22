@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en-GB"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Booking requests | Warm Moving</title>
+<link rel="stylesheet" href="/css/admin.css"><script src="/js/admin.js" defer></script>
+</head><body class="admin-page">
+<header class="admin-header"><a class="admin-brand" href="/">Warm Moving<span>BOOKING MANAGEMENT</span></a><button class="admin-secondary" id="logout" type="button">Sign out</button></header>
+<main class="admin-main">
+<div class="admin-heading"><div><p class="admin-eyebrow">YOUR NEXT MOVES</p><h1>Booking requests</h1><p class="admin-muted">Customer requests, newest first. Times are shown in UK time.</p></div><button class="admin-primary" id="refresh" type="button">Refresh</button></div>
+<p class="admin-error" id="adminError" role="alert" hidden></p>
+<p class="admin-loading" id="loading" role="status">Loading booking requests…</p>
+<p class="admin-empty" id="empty" hidden>No booking requests yet. New requests will appear here after customers submit the form.</p>
+<section class="booking-list" id="bookingList" aria-label="Booking requests" aria-live="polite"></section>
+<button class="admin-secondary load-more" id="loadMore" type="button" hidden>Load older requests</button>
+</main></body></html>

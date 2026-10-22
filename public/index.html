@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="asset-base-url" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#151714">
+  <meta name="description" content="Thoughtful home removals, office moves and packing services across the UK.">
+  <title>Warm Moving | Moving made simple</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/script.js" defer></script>
+</head>
+<body>
+  <div class="backdrop" aria-hidden="true"></div>
+  <div class="page-shell">
+    <header class="topbar container">
+      <a class="brand" href="/" aria-label="Warm Moving home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 32" fill="none"><path d="M3 6h21v17H3zM24 12h7l6 7v4H24z" stroke="currentColor" stroke-width="2.3" stroke-linejoin="round"/><path d="M27 15h4l3 4h-7z" fill="currentColor" opacity=".8"/><circle cx="11" cy="25" r="4" stroke="currentColor" stroke-width="2.3"/><circle cx="30" cy="25" r="4" stroke="currentColor" stroke-width="2.3"/></svg>
+        </span>
+        <span class="brand-copy"><strong>Warm Moving</strong><small>UK REMOVALS & PACKING</small></span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Open navigation menu">☰</button>
+      <nav class="nav" id="mainNav" aria-label="Main navigation">
+        <a class="nav-link active" href="/">Home</a>
+        <a class="nav-link" href="/booking.html?service=family">Home Removals</a>
+        <a class="nav-link" href="/booking.html?service=office">Office Moves</a>
+        <a class="nav-link" href="/booking.html?service=packing">Packing</a>
+      </nav>
+      <button class="contact-button" type="button" data-contact>☎ <span>Call us</span></button>
+    </header>
+
+    <main id="home" class="main container">
+      <section class="hero-copy" aria-labelledby="heroTitle">
+        <p class="eyebrow"><span></span> A BETTER MOVE, A BETTER HOME</p>
+        <h1 id="heroTitle">Moving,<br>made <span>simple.</span></h1>
+        <p class="hero-description">Careful hands. A fresh start.<br>Thoughtful moving services for your next chapter.</p>
+        <div class="hero-actions">
+          <button class="primary-button" type="button" data-contact>Book by phone</button>
+        </div>
+      </section>
+
+      <section class="services" id="services" aria-label="Choose a moving service">
+        <a class="service-card" id="family" href="/booking.html?service=family" aria-label="Book home removals">
+          <span class="service-art"><img class="service-visual" src="/images/family.svg" alt=""></span>
+          <span class="service-name">Home Removals</span>
+          <span class="service-desc">A careful move for every home</span>
+        </a>
+        <a class="service-card" id="office" href="/booking.html?service=office" aria-label="Book an office move">
+          <span class="service-art"><img class="service-visual" src="/images/office.svg" alt=""></span>
+          <span class="service-name">Office Moves</span>
+          <span class="service-desc">Less downtime. A smoother move.</span>
+        </a>
+        <a class="service-card" id="packing" href="/booking.html?service=packing" aria-label="Book packing">
+          <span class="service-art"><img class="service-visual" src="/images/packing.svg" alt=""></span>
+          <span class="service-name">Packing</span>
+          <span class="service-desc">Thoughtfully packed and protected</span>
+        </a>
+      </section>
+    </main>
+
+    <footer class="trustbar container" aria-label="Our promise">
+      <div class="trust-item">
+        <span class="trust-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M16 3 26 7v8c0 6-4.5 10.5-10 14C10.5 25.5 6 21 6 15V7z" stroke="currentColor" stroke-width="1.8"/><path d="m11 16 3.2 3.2L21 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span><strong>Experienced hands</strong><small>Reliable care, from start to finish</small></span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="1.8"/><path d="M20 10.5c-1.5-2-8-1.7-8 .9 0 3.5 8.3 1.3 8.3 5.2 0 3.1-6.6 4.4-9.2 1.1M16 7v18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+        <span><strong>Clear pricing</strong><small>Agreed with you before the move</small></span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M27 11.5c0 7.3-11 14.5-11 14.5S5 18.8 5 11.5a5.7 5.7 0 0 1 11-2 5.7 5.7 0 0 1 11 2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+        <span><strong>A personal touch</strong><small>Support at every step of your move</small></span>
+      </div>
+    </footer>
+  </div>
+
+  <dialog class="contact-modal" id="contactModal" aria-labelledby="modalTitle">
+    <button class="modal-close" type="button" id="closeModal" aria-label="Close dialog">×</button>
+    <p class="modal-kicker">A LITTLE HELP, A LIGHTER MOVE</p>
+    <h2 id="modalTitle">Book by phone</h2>
+    <p class="modal-intro">Tell us about your move. We will help you plan a smoother start.</p>
+    <a class="phone-number" href="tel:+442079460123">+44 20 7946 0123</a>
+    <p class="form-note">Example UK number. Replace with your business number before launch.</p>
+  </dialog>
+</body>
+</html>

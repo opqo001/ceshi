@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="asset-base-url" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173f35">
+  <meta name="description" content="Book your move with Warm Moving. Tell us your addresses, moving date and contact number.">
+  <title>Book your move | Warm Moving</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/address-maps.js" defer></script>
+  <script src="/js/script.js" defer></script>
+</head>
+<body class="booking-page">
+  <div class="backdrop" aria-hidden="true"></div>
+  <div class="page-shell">
+    <header class="topbar container">
+      <a class="brand" href="/" aria-label="Warm Moving home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 32" fill="none"><path d="M3 6h21v17H3zM24 12h7l6 7v4H24z" stroke="currentColor" stroke-width="2.3" stroke-linejoin="round"/><path d="M27 15h4l3 4h-7z" fill="currentColor" opacity=".8"/><circle cx="11" cy="25" r="4" stroke="currentColor" stroke-width="2.3"/><circle cx="30" cy="25" r="4" stroke="currentColor" stroke-width="2.3"/></svg>
+        </span>
+        <span class="brand-copy"><strong>Warm Moving</strong><small>UK REMOVALS & PACKING</small></span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Open navigation menu">☰</button>
+      <nav class="nav" id="mainNav" aria-label="Main navigation">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/booking.html?service=family">Home Removals</a>
+        <a class="nav-link" href="/booking.html?service=office">Office Moves</a>
+        <a class="nav-link" href="/booking.html?service=packing">Packing</a>
+      </nav>
+      <button class="contact-button" type="button" data-contact>☎ <span>Call us</span></button>
+    </header>
+    <main class="booking-main container">
+      <aside class="booking-aside">
+        <a class="back-link" href="/">Back to home</a>
+        <p class="eyebrow"><span></span> A NEW CHAPTER STARTS HERE</p>
+        <h1>Next stop,<br> <span>a fresh start.</span></h1>
+        <p class="booking-lead">Tell us where you are heading.<br>Let us take care of the heavy lifting.</p>
+        <div class="chosen-service">
+          <div class="chosen-art" id="chosenArt" aria-hidden="true"><img class="service-visual" src="/images/family.svg" alt=""></div>
+          <div><small>YOUR CHOSEN SERVICE</small><strong id="chosenName">Home Removals</strong><p id="chosenDescription">A careful move for every home</p></div>
+        </div>
+        <p class="aside-note">A little care makes all the difference.</p>
+      </aside>
+      <section class="booking-panel" aria-labelledby="bookingTitle">
+        <div id="bookingFields">
+          <p class="panel-kicker">PLAN YOUR MOVE</p>
+          <h2 id="bookingTitle">Plan your move</h2>
+          <p class="panel-intro">Share a few details and we will be in touch.</p>
+          <form id="bookingForm">
+            <div class="field full-width">
+              <label for="serviceType">Service</label>
+              <select id="serviceType" name="service"><option value="family">Home Removals</option><option value="office">Office Moves</option><option value="packing">Packing</option></select>
+            </div>
+            <div class="field address-field" data-address="from">
+              <label for="fromCity"><span class="location-dot origin"></span>Moving from <span class="required-mark">Required</span></label>
+              <div class="address-search">
+                <input id="fromCity" name="fromAddress" type="text" autocomplete="section-origin street-address" placeholder="Enter your full address" maxlength="300" required aria-describedby="fromAddressStatus">
+              </div>
+              <small class="field-help" id="fromAddressStatus" role="status">Street, town and postcode</small>
+            </div>
+            <div class="field address-field" data-address="to">
+              <label for="toCity"><span class="location-dot destination"></span>Moving to <span class="required-mark">Required</span></label>
+              <div class="address-search">
+                <input id="toCity" name="toAddress" type="text" autocomplete="section-destination street-address" placeholder="Enter your full address" maxlength="300" required aria-describedby="toAddressStatus">
+              </div>
+              <small class="field-help" id="toAddressStatus" role="status">Street, town and postcode</small>
+            </div>
+            <section class="location-preview shared-location full-width" id="sharedLocation" aria-label="Moving addresses and route map" data-mode="empty">
+              <div class="location-preview-head">
+                <span><i class="location-dot" id="sharedMapDot" aria-hidden="true"></i><span id="sharedMapTitle">Your move on the map</span></span>
+                <small id="sharedMapState">Add an address</small>
+              </div>
+              <div class="shared-map-viewport">
+              <iframe class="mini-map" id="sharedMapFrame" title="Google map for your move" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen hidden></iframe>
+              <div class="map-empty" id="sharedMapEmpty">
+                <svg viewBox="0 0 36 40" fill="none" aria-hidden="true"><path d="M30 16c0 9-12 19-12 19S6 25 6 16a12 12 0 1 1 24 0Z" stroke="currentColor" stroke-width="1.8"/><circle cx="18" cy="16" r="4" stroke="currentColor" stroke-width="1.8"/></svg>
+                <span id="sharedMapEmptyText">Your move, mapped out.<br>Add your addresses to preview your journey.</span>
+              </div>
+              <div class="map-loading" id="sharedMapLoading" role="status" hidden><span class="map-spinner" aria-hidden="true"></span>Loading Google Maps…</div>
+              </div>
+              <div class="route-overview" id="routeOverview" hidden>
+                <p><i class="location-dot" aria-hidden="true"></i><span>From</span><strong id="routeOrigin"></strong></p>
+                <p><i class="location-dot destination" aria-hidden="true"></i><span>To</span><strong id="routeDestination"></strong></p>
+              </div>
+              <div class="map-status-row">
+                <p class="address-status" id="sharedMapStatus" role="status" aria-live="polite">Check your addresses on the map.</p>
+                <button class="map-retry" id="reloadMap" type="button" hidden>Reload map</button>
+              </div>
+            </section>
+            <div class="field full-width">
+              <label for="moveDate">Moving date <span class="required-mark">Required</span></label>
+              <input id="moveDate" name="moveDate" type="date" required aria-describedby="dateHelp">
+              <small class="field-help" id="dateHelp">Choose today or a future date.</small>
+            </div>
+            <div class="field full-width">
+              <label for="contactPhone">Contact number <span class="required-mark">Required</span></label>
+              <input id="contactPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="e.g. +44 7700 900123" maxlength="30" required aria-describedby="phoneHelp">
+              <small class="field-help" id="phoneHelp">Include your country code, for example +44.</small>
+            </div>
+            <button class="primary-button submit-button full-width" type="submit">Request a booking</button>
+            <p class="form-note full-width">By submitting, you agree that we may contact you about this move.</p>
+            <p class="form-error full-width" id="formError" role="alert" hidden></p>
+          </form>
+        </div>
+        <section class="booking-success" id="bookingSuccess" aria-labelledby="successTitle" hidden>
+          <span class="success-symbol" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none"><path d="m11 20 6 6 12-13" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <p class="panel-kicker">READY FOR A NEW BEGINNING</p>
+          <h2 id="successTitle" tabindex="-1">Booking received</h2>
+          <p class="panel-intro" id="successDescription">Your booking request has been received.</p>
+          <dl class="booking-summary" id="bookingSummary"></dl>
+          <p class="success-note">We will contact you to confirm availability and agree the details of your move.</p>
+          <a class="primary-button" href="/">Back to home</a>
+          <button class="text-button" id="bookAgain" type="button">Make another booking</button>
+        </section>
+      </section>
+    </main>
+    <footer class="booking-footer container">Warm Moving · Support at every step of your move</footer>
+  </div>
+  <dialog class="contact-modal" id="contactModal" aria-labelledby="modalTitle">
+    <button class="modal-close" type="button" id="closeModal" aria-label="Close dialog">×</button>
+    <p class="modal-kicker">A LITTLE HELP, A LIGHTER MOVE</p>
+    <h2 id="modalTitle">Book by phone</h2>
+    <p class="modal-intro">Tell us about your move. We will help you plan a smoother start.</p>
+    <a class="phone-number" href="tel:+442079460123">+44 20 7946 0123</a>
+    <p class="form-note">Example UK number. Replace with your business number before launch.</p>
+  </dialog>
+</body>
+</html>

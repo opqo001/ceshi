@@ -1,0 +1,42 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "warm-moving",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-10-22",
+  "workers_dev": true,
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": true,
+    "html_handling": "none",
+    "not_found_handling": "none"
+  },
+  "r2_buckets": [
+    {
+      "binding": "BOOKINGS",
+      "bucket_name": "warm-moving-bookings"
+    }
+  ],
+  "ratelimits": [
+    {
+      "name": "ADMIN_LOGIN_RATE_LIMITER",
+      "namespace_id": "1001",
+      "simple": {
+        "limit": 5,
+        "period": 60
+      }
+    },
+    {
+      "name": "BOOKING_RATE_LIMITER",
+      "namespace_id": "1002",
+      "simple": {
+        "limit": 10,
+        "period": 60
+      }
+    }
+  ],
+  "observability": {
+    "enabled": true
+  },
+  "keep_vars": true
+}

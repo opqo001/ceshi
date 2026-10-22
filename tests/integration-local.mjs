@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+const origin='http://127.0.0.1:8787';
+const body={service:'office',fromAddress:'10 Downing Street, London SW1A 2AA',toAddress:'Manchester Piccadilly, Manchester M60 7RA',phone:'+44 7700 900123',moveDate:new Date(Date.now()+86400000).toISOString().slice(0,10),submissionId:`${Date.now()}-${crypto.randomUUID()}`};
+const post=(path,data,headers={})=>fetch(origin+path,{method:'POST',headers:{Origin:origin,'Content-Type':'application/json',...headers},body:JSON.stringify(data)});
+assert.equal((await fetch(origin+'/api/admin/bookings')).status,401);
+const first=await post('/api/bookings',body);assert.equal(first.status,201);const a=await first.json();
+const second=await post('/api/bookings',body);assert.equal(second.status,200);assert.equal((await second.json()).id,a.id);
+const login=await post('/api/admin/login',{password:'123'});assert.equal(login.status,200);
+const cookie=login.headers.get('Set-Cookie').split(';')[0];
+const response=await fetch(origin+'/api/admin/bookings',{headers:{Cookie:cookie}});assert.equal(response.status,200);
+const records=(await response.json()).bookings;assert.equal(records.filter(record=>record.id===a.id).length,1);
+console.log('PASS: local Worker + native R2 persistence, duplicate suppression, private API, password login and admin read.');
